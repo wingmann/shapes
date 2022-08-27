@@ -1,5 +1,5 @@
-use std::fmt::{Display, Formatter};
 use crate::shapes::Shape;
+use std::fmt::{Display, Formatter};
 
 pub struct Rectangle {
     width: f64,
@@ -18,7 +18,11 @@ impl Rectangle {
 
 impl Display for Rectangle {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "rectangle(width: {}, length: {})", self.width, self.length)
+        write!(
+            f,
+            "rectangle(width: {}, length: {})",
+            self.width, self.length
+        )
     }
 }
 

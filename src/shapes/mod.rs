@@ -1,9 +1,11 @@
-mod shape;
 mod circle;
-mod square;
+mod ellipse;
 mod rectangle;
+mod shape;
+mod square;
 
-pub use shape::Shape;
 pub use circle::Circle;
-pub use square::Square;
+pub use ellipse::Ellipse;
 pub use rectangle::Rectangle;
+pub use shape::Shape;
+pub use square::Square;
