@@ -17,7 +17,7 @@ impl Circle {
 
 impl Display for Circle {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "circle({})", self.radius)
+        write!(f, "circle(radius: {})", self.radius)
     }
 }
 

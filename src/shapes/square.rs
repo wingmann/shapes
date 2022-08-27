@@ -1,5 +1,5 @@
-use std::fmt::{Display, Formatter};
 use crate::shapes::Shape;
+use std::fmt::{Display, Formatter};
 
 pub struct Square {
     side: f64,
@@ -17,7 +17,7 @@ impl Square {
 
 impl Display for Square {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "square({})", self.side)
+        write!(f, "square(side: {})", self.side)
     }
 }
 
