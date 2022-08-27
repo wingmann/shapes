@@ -1,5 +1,5 @@
-use std::fmt::{Display, Formatter};
 use crate::shapes::Shape;
+use std::fmt::{Display, Formatter};
 
 pub struct Circle {
     radius: f64,
@@ -8,7 +8,7 @@ pub struct Circle {
 impl Circle {
     fn new(radius: f64) -> Option<Self> {
         if radius > 0.0 {
-            Some(Circle { radius })
+            Some(Self { radius })
         } else {
             None
         }
