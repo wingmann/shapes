@@ -43,9 +43,9 @@ mod tests {
 
     #[test]
     fn radius() {
-        const RADIUS: f64 = 25.8;
-        let area = RADIUS * RADIUS;
+        const SIDE: f64 = 25.8;
+        let area = SIDE * SIDE;
 
-        assert_eq!(area, Square::new(RADIUS).unwrap().area());
+        assert_eq!(area, Square::new(SIDE).unwrap().area());
     }
 }
