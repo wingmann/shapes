@@ -47,7 +47,7 @@ mod tests {
     }
 
     #[test]
-    fn radius() {
+    fn area() {
         const WIDTH: f64 = 25.8;
         const LENGTH: f64 = 39.1;
         let area = WIDTH * LENGTH;

@@ -42,7 +42,7 @@ mod tests {
     }
 
     #[test]
-    fn radius() {
+    fn area() {
         const SIDE: f64 = 25.8;
         let area = SIDE * SIDE;
 

@@ -43,7 +43,7 @@ mod tests {
     }
 
     #[test]
-    fn radius() {
+    fn area() {
         const A: f64 = 25.8;
         const B: f64 = 39.1;
         let area = std::f64::consts::PI * A * B;
