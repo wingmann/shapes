@@ -1,0 +1,5 @@
+#include "shapes/shape.h"
+#include "shapes/square.h"
+#include "shapes/circle.h"
+#include "shapes/rectangle.h"
+#include "shapes/ellipse.h"
