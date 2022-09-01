@@ -5,27 +5,26 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/lib")
-
-set(PROJECT_INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/include")
-
-add_subdirectory(src)
+list(APPEND PROJECT_INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/include")
 
 find_package(fmt COMPONENTS fmt REQUIRED)
+find_package(GTest COMPONENTS gtest_main REQUIRED)
+
+add_subdirectory(src)
+add_subdirectory(test)
+
 if(fmt_FOUND)
+    # Executable
     target_include_directories(${PROJECT_NAME} PRIVATE ${fmt_INCLUDE_DIRS} ${PROJECT_INCLUDE_DIRS})
-    target_link_libraries(${PROJECT_NAME} fmt::fmt)
+    target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)
+
+    # Lib for tests
+    target_include_directories(${PROJECT_NAME}_lib PUBLIC ${fmt_INCLUDE_DIRS} ${PROJECT_INCLUDE_DIRS})
+    target_link_libraries(${PROJECT_NAME}_lib PUBLIC fmt::fmt)
 endif()
 
-if(CMAKE_BUILD_TYPE MATCHES "Test")
-    add_subdirectory(test)
-
-    find_package(GTest COMPONENTS gtest_main REQUIRED)
-    if(GTest_FOUND)
-        target_include_directories("${PROJECT_NAME}_test" PRIVATE
-            ${GTest_INCLUDE_DIRS}
-            ${fmt_INCLUDE_DIRS}
-            ${PROJECT_INCLUDE_DIRS})
-
-        target_link_libraries("${PROJECT_NAME}_test" GTest::gtest_main fmt::fmt)
-    endif()
+# Google test
+if(GTest_FOUND)
+    target_include_directories("${PROJECT_NAME}_test" PRIVATE ${GTest_INCLUDE_DIRS})
+    target_link_libraries("${PROJECT_NAME}_test" PRIVATE GTest::gtest_main shapes_lib)
 endif()

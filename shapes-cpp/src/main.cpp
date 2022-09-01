@@ -1,8 +1,4 @@
-#include "shapes/circle.h"
-#include "shapes/ellipse.h"
-#include "shapes/rectangle.h"
-#include "shapes/shape.h"
-#include "shapes/square.h"
+#include "shapes/shapes.h"
 
 #include <memory>
 #include <vector>
