@@ -18,13 +18,13 @@ if(fmt_FOUND)
     target_include_directories(${PROJECT_NAME} PRIVATE ${fmt_INCLUDE_DIRS} ${PROJECT_INCLUDE_DIRS})
     target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)
 
-    # Lib for tests
-    target_include_directories(${PROJECT_NAME}_lib PUBLIC ${fmt_INCLUDE_DIRS} ${PROJECT_INCLUDE_DIRS})
-    target_link_libraries(${PROJECT_NAME}_lib PUBLIC fmt::fmt)
+    # Lib for test
+    target_include_directories("${PROJECT_NAME}_lib" PUBLIC ${fmt_INCLUDE_DIRS} ${PROJECT_INCLUDE_DIRS})
+    target_link_libraries("${PROJECT_NAME}_lib" PUBLIC fmt::fmt)
 endif()
 
 # Google test
 if(GTest_FOUND)
     target_include_directories("${PROJECT_NAME}_test" PRIVATE ${GTest_INCLUDE_DIRS})
-    target_link_libraries("${PROJECT_NAME}_test" PRIVATE GTest::gtest_main shapes_lib)
+    target_link_libraries("${PROJECT_NAME}_test" PRIVATE GTest::gtest_main "${PROJECT_NAME}_lib")
 endif()
