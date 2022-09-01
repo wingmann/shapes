@@ -28,9 +28,7 @@ public:
 
     [[nodiscard]]
     std::string print() const override {
-        std::stringstream ss;
-        ss << "ellipse(a: " << a_ << ", b: " << b_ << ')';
-        return ss.str();
+        return fmt::format("ellipse(a: {}, b: {})", a_, b_);
     }
 };
 

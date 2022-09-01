@@ -1,9 +1,9 @@
 #ifndef WINGMANN_SHAPES_SHAPE_H
 #define WINGMANN_SHAPES_SHAPE_H
 
-#include <iostream>
+#include <fmt/format.h>
+
 #include <string>
-#include <sstream>
 
 namespace shapes {
 

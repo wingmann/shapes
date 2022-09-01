@@ -16,32 +16,20 @@ public:
 
 public:
     [[nodiscard]]
-    double get_width() const {
-        return width_;
-    }
+    double get_width() const { return width_; }
 
     [[nodiscard]]
-    double get_length() const {
-        return length_;
-    }
+    double get_length() const { return length_; }
 
-    void set_width(double width) {
-        width_ = width;
-    }
+    void set_width(double width) { width_ = width; }
 
-    void set_length(double length) {
-        length_ = length;
-    }
+    void set_length(double length) { length_ = length; }
 
-    double area() override {
-        return width_ * length_;
-    }
+    double area() override { return width_ * length_; }
 
     [[nodiscard]]
     std::string print() const override {
-        std::stringstream ss;
-        ss << "rectangle(width: " << width_ << ", length: " << length_  << ')';
-        return ss.str();
+        return fmt::format("rectangle(width: {}, length: {})", width_, length_);
     }
 };
 

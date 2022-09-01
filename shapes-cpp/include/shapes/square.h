@@ -18,17 +18,11 @@ public:
 
 public:
     [[nodiscard]]
-    double get_radius() const {
-        return side_;
-    }
+    double get_radius() const { return side_; }
 
-    void set_radius(double side) {
-        side_ = side;
-    }
+    void set_radius(double side) { side_ = side; }
 
-    double area() override {
-        return side_ * side_;
-    }
+    double area() override { return side_ * side_; }
 
     [[nodiscard]]
     std::optional<Rectangle> to_rectangle() const {
@@ -37,9 +31,7 @@ public:
 
     [[nodiscard]]
     std::string print() const override {
-        std::stringstream ss;
-        ss << "square(side: " << side_ << ')';
-        return ss.str();
+        return fmt::format("square(side: {})", side_);
     }
 };
 
