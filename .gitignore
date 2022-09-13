@@ -7,6 +7,5 @@
 **/out/
 **/bin/
 **/lib/
-**/vcpkg/
 
 **/*.rs.bk
