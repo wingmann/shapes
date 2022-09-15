@@ -5,7 +5,7 @@
 
 using namespace wingmann::shapes;
 
-int main(int argc, char** argv) {
+int main() {
     std::vector<std::unique_ptr<Shape>> shapes(8);
     shapes[0] = std::make_unique<Circle>(1.0);
     shapes[1] = std::make_unique<Circle>(2.0);
@@ -16,8 +16,8 @@ int main(int argc, char** argv) {
     shapes[6] = std::make_unique<Square>(8.0);
     shapes[7] = std::make_unique<Square>(4.0);
 
-    for (auto& shape : shapes) {
+    for (auto& shape : shapes)
         fmt::print("Area of shape: {} = {}\n", shape->print(), shape->area());
-    }
+
     return 0;
 }
