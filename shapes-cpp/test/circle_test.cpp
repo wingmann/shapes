@@ -5,8 +5,8 @@
 using namespace wingmann::shapes;
 
 TEST(shapes, circle_area) {
-    const auto radius = 25.8;
-    auto area = consts::pi * radius * radius;
+    const auto radius{25.8};
+    const auto area{2091.17};
 
-    EXPECT_EQ(area, Circle(radius).area());
+    EXPECT_EQ(area, std::round(Circle(radius).area() * 100) / 100);
 }

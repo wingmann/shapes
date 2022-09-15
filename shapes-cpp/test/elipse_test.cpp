@@ -7,7 +7,7 @@ using namespace wingmann::shapes;
 TEST(shapes, ellipse_area) {
     const auto a{25.8};
     const auto b{39.1};
-    auto area = consts::pi * a * b;
+    const auto area{3169.18};
 
-    EXPECT_EQ(area, Ellipse(a, b).area());
+    EXPECT_EQ(area, std::round(Ellipse(a, b).area() * 100) / 100);
 }

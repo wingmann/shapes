@@ -6,9 +6,9 @@ using namespace wingmann::shapes;
 
 TEST(shapes, square_area) {
     const auto side{25.8};
-    auto area = side * side;
+    const auto area{665.64};
 
-    EXPECT_EQ(area, Square{side}.area());
+    EXPECT_EQ(area, std::round(Square(side).area() * 100) / 100);
 }
 
 TEST(shapes, square_to_rectangle) {
