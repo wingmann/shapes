@@ -1,18 +1,20 @@
 #ifndef WINGMANN_SHAPES_CIRCLE_H
 #define WINGMANN_SHAPES_CIRCLE_H
 
-#include "shape.h"
+#include "basic_shape.h"
 #include "consts.h"
+
+#include <sstream>
 
 namespace wingmann::shapes {
 
-class Circle : public Shape {
+class circle : public basic_shape {
     double radius_{};
 
 public:
-    Circle() = default;
-    explicit Circle(double radius) : Shape{}, radius_{radius} { }
-    ~Circle() override = default;
+    circle() = default;
+    explicit circle(double radius) : basic_shape{}, radius_{radius} { }
+    ~circle() override = default;
 
 public:
     [[nodiscard]]
@@ -23,8 +25,10 @@ public:
     double area() override { return consts::pi * radius_ * radius_; }
 
     [[nodiscard]]
-    std::string print() const override {
-        return fmt::format("circle(radius: {})", radius_);
+    std::string to_string() const override {
+        std::stringstream ss;
+        ss << "circle { radius: " << radius_ << " }";
+        return ss.str();
     }
 };
 

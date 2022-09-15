@@ -1,20 +1,20 @@
 #ifndef WINGMANN_SHAPES_SQUARE_H
 #define WINGMANN_SHAPES_SQUARE_H
 
-#include "shape.h"
+#include "basic_shape.h"
 #include "rectangle.h"
 
 #include <optional>
 
 namespace wingmann::shapes {
 
-class Square : public Shape {
+class square : public basic_shape {
     double side_{};
 
 public:
-    Square() = default;
-    explicit Square(double side) : Shape{}, side_{side} { }
-    ~Square() override = default;
+    square() = default;
+    explicit square(double side) : basic_shape{}, side_{side} { }
+    ~square() override = default;
 
 public:
     [[nodiscard]]
@@ -25,13 +25,15 @@ public:
     double area() override { return side_ * side_; }
 
     [[nodiscard]]
-    std::optional<Rectangle> to_rectangle() const {
-        return Rectangle{side_, side_};
+    std::optional<rectangle> to_rectangle() const {
+        return rectangle{side_, side_};
     }
 
     [[nodiscard]]
-    std::string print() const override {
-        return fmt::format("square(side: {})", side_);
+    std::string to_string() const override {
+        std::stringstream ss;
+        ss << "square { side: " << side_ <<  " }";
+        return ss.str();
     }
 };
 
