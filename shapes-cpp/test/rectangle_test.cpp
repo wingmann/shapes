@@ -2,7 +2,7 @@
 
 #include <gtest/gtest.h>
 
-using namespace shapes;
+using namespace wingmann::shapes;
 
 TEST(shapes, rectangle_area) {
     const auto width{25.8};

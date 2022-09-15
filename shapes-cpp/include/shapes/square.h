@@ -6,7 +6,7 @@
 
 #include <optional>
 
-namespace shapes {
+namespace wingmann::shapes {
 
 class Square : public Shape {
     double side_{};
@@ -35,6 +35,6 @@ public:
     }
 };
 
-} // namespace shapes
+} // namespace wingmann::shapes
 
 #endif // WINGMANN_SHAPES_SQUARE_H

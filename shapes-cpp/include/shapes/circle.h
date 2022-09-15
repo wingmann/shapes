@@ -2,8 +2,9 @@
 #define WINGMANN_SHAPES_CIRCLE_H
 
 #include "shape.h"
+#include "consts.h"
 
-namespace shapes {
+namespace wingmann::shapes {
 
 class Circle : public Shape {
     double radius_{};
@@ -19,7 +20,7 @@ public:
 
     void set_radius(double radius) { radius_ = radius; }
 
-    double area() override { return pi * radius_ * radius_; }
+    double area() override { return consts::pi * radius_ * radius_; }
 
     [[nodiscard]]
     std::string print() const override {
@@ -27,6 +28,6 @@ public:
     }
 };
 
-} // namespace shapes
+} // namespace wingmann::shapes
 
 #endif // WINGMANN_SHAPES_CIRCLE_H

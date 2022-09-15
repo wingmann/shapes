@@ -1,11 +1,13 @@
-**/.idea/
-**/.vs/
+# Build output directories
+**/build
+**/cmake-build-debug
+**/bin
+**/out
+**/target
 
-**/build/
-**/cmake-buid-debug/
-**/target/
-**/out/
-**/bin/
-**/lib/
+# Personal IDE config files
+**/.idea
+**/.vs
 
+# rustfmt files
 **/*.rs.bk

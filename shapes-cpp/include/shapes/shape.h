@@ -5,7 +5,7 @@
 
 #include <string>
 
-namespace shapes {
+namespace wingmann::shapes {
 
 class Shape {
 public:
@@ -19,8 +19,6 @@ public:
     virtual std::string print() const = 0;
 };
 
-const double pi = 3.14159265358979323846264338327950288;
-
-} // namespace shapes
+} // namespace wingmann::shapes
 
 #endif // WINGMANN_SHAPES_SHAPE_H

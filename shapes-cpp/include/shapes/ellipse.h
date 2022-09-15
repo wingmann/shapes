@@ -2,8 +2,9 @@
 #define WINGMANN_SHAPES_ELLIPSE_H
 
 #include "shape.h"
+#include "consts.h"
 
-namespace shapes {
+namespace wingmann::shapes {
 
 class Ellipse : public Shape {
     double a_{};
@@ -24,7 +25,7 @@ public:
     void set_a(double a) { a_ = a; }
     void set_b(double b) { b_ = b; }
 
-    double area() override { return pi * a_ * b_; }
+    double area() override { return consts::pi * a_ * b_; }
 
     [[nodiscard]]
     std::string print() const override {
@@ -32,6 +33,6 @@ public:
     }
 };
 
-} // namespace shapes
+} // namespace wingmann::shapes
 
 #endif // WINGMANN_SHAPES_ELLIPSE_H

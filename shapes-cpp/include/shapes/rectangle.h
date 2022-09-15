@@ -3,7 +3,7 @@
 
 #include "shape.h"
 
-namespace shapes {
+namespace wingmann::shapes {
 
 class Rectangle : public Shape {
     double width_{};
@@ -33,6 +33,6 @@ public:
     }
 };
 
-} // namespace shapes
+} // namespace wingmann::shapes
 
 #endif // WINGMANN_SHAPES_RECTANGLE_H

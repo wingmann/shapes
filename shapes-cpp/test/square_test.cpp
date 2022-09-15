@@ -2,7 +2,7 @@
 
 #include <gtest/gtest.h>
 
-using namespace shapes;
+using namespace wingmann::shapes;
 
 TEST(shapes, square_area) {
     const auto side{25.8};

@@ -3,7 +3,7 @@
 #include <memory>
 #include <vector>
 
-using namespace shapes;
+using namespace wingmann::shapes;
 
 int main(int argc, char** argv) {
     std::vector<std::unique_ptr<Shape>> shapes(8);
