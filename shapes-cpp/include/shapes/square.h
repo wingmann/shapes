@@ -25,12 +25,14 @@ public:
     double area() override { return side_ * side_; }
 
     [[nodiscard]]
-    std::optional<rectangle> to_rectangle() const {
+    std::optional<rectangle> to_rectangle() const
+    {
         return rectangle{side_, side_};
     }
 
     [[nodiscard]]
-    std::string to_string() const override {
+    std::string to_string() const override
+    {
         std::stringstream ss;
         ss << "square { side: " << side_ <<  " }";
         return ss.str();

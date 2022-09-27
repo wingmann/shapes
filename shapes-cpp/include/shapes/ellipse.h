@@ -31,7 +31,8 @@ public:
     double area() override { return consts::pi * a_ * b_; }
 
     [[nodiscard]]
-    std::string to_string() const override {
+    std::string to_string() const override
+    {
         std::stringstream ss;
         ss << "ellipse { a: " << a_ << ", b: " << b_ << " }";
         return ss.str();

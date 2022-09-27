@@ -25,7 +25,8 @@ public:
     double area() override { return consts::pi * radius_ * radius_; }
 
     [[nodiscard]]
-    std::string to_string() const override {
+    std::string to_string() const override
+    {
         std::stringstream ss;
         ss << "circle { radius: " << radius_ << " }";
         return ss.str();

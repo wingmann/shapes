@@ -4,7 +4,8 @@
 
 using namespace wingmann;
 
-TEST(shapes, circle_area) {
+TEST(shapes, circle_area)
+{
     const auto radius{25.8};
     const auto area{2091.17};
 

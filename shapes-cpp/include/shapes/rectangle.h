@@ -30,7 +30,8 @@ public:
     double area() override { return width_ * length_; }
 
     [[nodiscard]]
-    std::string to_string() const override {
+    std::string to_string() const override
+    {
         std::stringstream ss;
         ss << "rectangle { width: " << width_ << ", length: " << length_ << " }";
         return ss.str();
