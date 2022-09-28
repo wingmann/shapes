@@ -4,8 +4,7 @@
 
 using namespace wingmann;
 
-TEST(shapes, rectangle_area)
-{
+TEST(shapes, rectangle_area) {
     const auto width{25.8};
     const auto length{39.1};
     const auto area{1008.78};

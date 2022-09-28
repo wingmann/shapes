@@ -4,16 +4,14 @@
 
 using namespace wingmann;
 
-TEST(shapes, square_area)
-{
+TEST(shapes, square_area) {
     const auto side{25.8};
     const auto area{665.64};
 
     EXPECT_EQ(area, std::round(shapes::square(side).area() * 100) / 100);
 }
 
-TEST(shapes, square_to_rectangle)
-{
+TEST(shapes, square_to_rectangle) {
     const auto side{25.8};
     auto rectangle = shapes::square(side).to_rectangle();
 

@@ -5,10 +5,10 @@
 
 namespace wingmann::shapes {
 
-class basic_shape {
+class shape {
 public:
-    basic_shape() = default;
-    virtual ~basic_shape() = default;
+    shape() = default;
+    virtual ~shape() = default;
 
 public:
     virtual double area() = 0;
