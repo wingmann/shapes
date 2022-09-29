@@ -8,31 +8,27 @@
 
 namespace wingmann::shapes {
 
-class ellipse : public shape {
-    double a_{};
-    double b_{};
+struct ellipse : public shape {
+    double a{};
+    double b{};
 
 public:
     ellipse() = default;
     ~ellipse() override = default;
 
-    explicit ellipse(double a, double b) : shape{}, a_{a}, b_{b} { }
+    explicit ellipse(double a, double b) : a{a}, b{b} { }
 
 public:
-    [[nodiscard]]
-    double get_a() const { return a_; }
-    void set_a(double a) { a_ = a; }
+    double area() override
+    {
+        return consts::pi * a * b;
+    }
 
     [[nodiscard]]
-    double get_b() const { return b_; }
-    void set_b(double b) { b_ = b; }
-
-    double area() override { return consts::pi * a_ * b_; }
-
-    [[nodiscard]]
-    std::string to_string() const override {
+    std::string to_string() const override
+    {
         std::stringstream ss;
-        ss << "ellipse { a: " << a_ << ", b: " << b_ << " }";
+        ss << "ellipse { a: " << a << ", b: " << b << " }";
         return ss.str();
     }
 };

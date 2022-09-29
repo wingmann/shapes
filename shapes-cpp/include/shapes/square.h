@@ -8,29 +8,34 @@
 
 namespace wingmann::shapes {
 
-class square : public shape {
-    double side_{};
+struct square : public shape {
+    double side{};
 
 public:
     square() = default;
     ~square() override = default;
 
-    explicit square(double side) : shape{}, side_{side} { }
+    explicit square(double side) : side{side}
+    {
+    }
 
 public:
-    [[nodiscard]]
-    double get_radius() const { return side_; }
-    void set_radius(double side) { side_ = side; }
-
-    double area() override { return side_ * side_; }
-
-    [[nodiscard]]
-    std::optional<rectangle> to_rectangle() const { return rectangle{side_, side_}; }
+    double area() override
+    {
+        return side * side;
+    }
 
     [[nodiscard]]
-    std::string to_string() const override {
+    std::optional<rectangle> to_rectangle() const
+    {
+        return rectangle{side, side};
+    }
+
+    [[nodiscard]]
+    std::string to_string() const override
+    {
         std::stringstream ss;
-        ss << "square { side: " << side_ <<  " }";
+        ss << "square { side: " << side << " }";
         return ss.str();
     }
 };

@@ -6,7 +6,8 @@
 
 using namespace wingmann::shapes;
 
-int main() {
+int main()
+{
     std::vector<std::unique_ptr<shape>> shapes(8);
     shapes[0] = std::make_unique<circle>(1.0);
     shapes[1] = std::make_unique<circle>(2.0);

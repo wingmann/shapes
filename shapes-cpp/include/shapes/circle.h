@@ -8,26 +8,28 @@
 
 namespace wingmann::shapes {
 
-class circle : public shape {
-    double radius_{};
+struct circle : public shape {
+    double radius;
 
 public:
     circle() = default;
     ~circle() override = default;
 
-    explicit circle(double radius) : shape{}, radius_{radius} { }
+    explicit circle(double radius) : radius{radius}
+    {
+    }
 
 public:
-    [[nodiscard]]
-    double get_radius() const { return radius_; }
-    void set_radius(double radius) { radius_ = radius; }
+    double area() override
+    {
+        return consts::pi * radius * radius;
+    }
 
-    double area() override { return consts::pi * radius_ * radius_; }
-
     [[nodiscard]]
-    std::string to_string() const override {
+    std::string to_string() const override
+    {
         std::stringstream ss;
-        ss << "circle { radius: " << radius_ << " }";
+        ss << "circle { radius: " << radius << " }";
         return ss.str();
     }
 };

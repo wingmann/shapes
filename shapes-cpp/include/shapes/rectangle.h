@@ -7,32 +7,29 @@
 
 namespace wingmann::shapes {
 
-class rectangle : public shape {
-    double width_{};
-    double length_{};
+struct rectangle : public shape {
+    double width{};
+    double length{};
 
 public:
     rectangle() = default;
     ~rectangle() override = default;
 
-    explicit rectangle(double width, double length)
-        : shape{}, width_{width}, length_{length} { }
+    explicit rectangle(double width, double length) : width{width}, length{length}
+    {
+    }
 
 public:
-    [[nodiscard]]
-    double get_width() const { return width_; }
-    void set_width(double width) { width_ = width; }
+    double area() override
+    {
+        return width * length;
+    }
 
     [[nodiscard]]
-    double get_length() const { return length_; }
-    void set_length(double length) { length_ = length; }
-
-    double area() override { return width_ * length_; }
-
-    [[nodiscard]]
-    std::string to_string() const override {
+    std::string to_string() const override
+    {
         std::stringstream ss;
-        ss << "rectangle { width: " << width_ << ", length: " << length_ << " }";
+        ss << "rectangle { width: " << width << ", length: " << length << " }";
         return ss.str();
     }
 };

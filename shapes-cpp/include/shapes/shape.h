@@ -5,8 +5,7 @@
 
 namespace wingmann::shapes {
 
-class shape {
-public:
+struct shape {
     shape() = default;
     virtual ~shape() = default;
 
